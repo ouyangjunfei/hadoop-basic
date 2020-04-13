@@ -1,0 +1,1 @@
+export SPARK_DIST_CLASSPATH=$(/usr/local/hadoop-2.7.3/bin/hadoop classpath)
