@@ -11,8 +11,7 @@ docker run -di \
            --name=master \
            --hostname=master \
            --network=hadoop \
-           spark:1.0 \
-           /bin/bash
+           spark:1.0
 
 echo 'Start running hadoop worker containers...'
 docker run -di \
@@ -20,8 +19,7 @@ docker run -di \
            --hostname=worker1 \
            -p 8082:8081 \
            --network=hadoop \
-           spark:1.0 \
-           /bin/bash
+           spark:1.0
 
 
 echo -e 'Done\n'
