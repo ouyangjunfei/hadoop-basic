@@ -35,13 +35,15 @@
 
 此时运行了两个容器，一个为master，一个为worker1
 
-> $ docker attach master
+进入容器master
 
-进入容器master，进行Namenode初始化
-> $ bash \$HADOOP_HOME/bin/hdfs namenode -format
+> $ docker exec -it master bash
+
+进行Namenode初始化
+> $ hdfs namenode -format
 
 启动HDFS
-> $ bash \$HADOOP_HOME/sbin/start-dfs.sh
+> $ start-dfs.sh
 
 启动Spark集群
 > $ bash \$SPARK_HOME/sbin/start-all.sh
