@@ -35,6 +35,8 @@
 
 此时运行了两个容器，一个为master，一个为worker1
 
+建议在本机中`/etc/hosts`加入对两个容器的域名解析
+
 进入容器master
 
 > $ docker exec -it master bash
@@ -47,3 +49,22 @@
 
 启动Spark集群
 > $ bash \$SPARK_HOME/sbin/start-all.sh
+
+在master容器中安装pip
+
+> $ apt-get install python3-pip
+
+安装jupyter
+
+> $ pip3 install jupyter -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+
+配置pyspark启动参数
+
+> $ vim $SPARK_HOME/bin/pyspark
+
+    export PYSPARK_DRIVER_PYTHON = jupyter
+    export PYSPARK_DRIVER_PYTHON_OPTS='notebook --ip=* --allow-root --no-browser'
+
+启动pyspark
+
+> $ pyspark --master spark://master:7077
