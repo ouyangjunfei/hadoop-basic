@@ -26,7 +26,7 @@
 
 `docker`目录用于构建*Hadoop* 2.7.3和*Spark* 2.4.5
 
-`shell`是*Docker*镜像构建完D成后的运行命令
+`shell`是*Docker*镜像构建完成后的运行命令
 
 ---
 
